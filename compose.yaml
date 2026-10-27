@@ -1,0 +1,13 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+  dashboard:
+    build: ./dashboard
+    ports:
+      - "9000:9000"
+    environment:
+      API_URL: http://localhost:8080
+    depends_on:
+      - api
