@@ -2,7 +2,7 @@
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-HOST = "127.0.0.1"
+HOST = "0.0.0.0"
 PORT = 8080
 
 INCIDENTS = [
@@ -31,3 +31,4 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     print(f"incident-api listening on {HOST}:{PORT}", flush=True)
     HTTPServer((HOST, PORT), Handler).serve_forever()
+
